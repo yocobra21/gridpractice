@@ -89,6 +89,39 @@
     &::after
       opacity: .32
 
+.portfolio-section
+  padding: 10px
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: $gutter/2
 
+.portfolio-item
+  min-height: 32vh
+  background-position: center
+  background-size: cover
+  text-align: center
+  align-items: center
+  padding: $gutter
+  font-size: 20px
+  font-weight: 800
+  color: #fff
+  position: relative
+  transition: color .5s ease
+  cursor: pointer
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    background-color: $dark
+    opacity: .5
+    transition: background-color .5s ease
+  &:hover
+    color: $accent
+    &::before
+      background-color: darken($dark, 100%)
+  > *
+    z-index: 1
 
 @import "media"
